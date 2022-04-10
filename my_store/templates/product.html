@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="card col-4 mt-3" style="width: 20rem;";>
+        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=705&q=80" class="card-img-top" alt="..." height="320px;">
+        <div class="card-body">
+            <h5 class="card-title">{{ object.name }}</h5>
+            <h5 class="text-warning">{{ object.product_category.name }}</h5>
+            <h5 class="text-info">
+                {% if object.discount_price %}
+                    $ {{ object.discount_price }} <del class="text-danger">$ {{ object.price }} </del>
+                {% else %}
+                    $ {{ object.price }}
+                {% endif %}
+            </h5>
+            <p class="card-text">{{ object.description }}</p>
+            <a class="btn btn-info" href="{{ object.get_add_to_cart_url }}">Add to cart</a>
+        </div>
+    </div> 
+</div>
+
+{% endblock %}
+
+

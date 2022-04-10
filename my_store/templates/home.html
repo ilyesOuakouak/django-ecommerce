@@ -19,7 +19,7 @@
                         {% endif %}
                     </h5>
                     <p class="card-text">{{ product.description }}</p>
-                    <a href="#" class="btn btn-primary">view detail</a>
+                    <a href="{{ product.get_absolute_url }}" class="btn btn-primary">view detail</a>
                 </div>
             </div>
         {% endfor %}
@@ -27,3 +27,4 @@
 </div>
 
 {% endblock %}
+
